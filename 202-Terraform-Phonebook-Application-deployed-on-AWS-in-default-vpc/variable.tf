@@ -42,6 +42,3 @@ variable "key-name" {
   default = "derya-key"
 }
 
-variable "vpc_id" {
-    default = "vpc-00d590fd8232c1efd"
-}

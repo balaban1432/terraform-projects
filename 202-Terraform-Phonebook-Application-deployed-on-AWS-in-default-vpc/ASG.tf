@@ -1,7 +1,11 @@
+data "aws_vpc" "selected" {
+  default = true
+}
+
 data "aws_subnets" "default-vpc-subnets" {
   filter {
     name   = "vpc-id"
-    values = [var.vpc_id]
+    values = [data.aws_vpc.selected.id]
   }
 }
 
@@ -23,7 +27,7 @@ resource "aws_alb_target_group" "alb-target" {
   name        = var.owner
   port        = 80
   protocol    = "HTTP"
-  vpc_id      = var.vpc_id
+  vpc_id      = data.aws_vpc.selected.id
   target_type = "instance"
   health_check {
     healthy_threshold   = 3
