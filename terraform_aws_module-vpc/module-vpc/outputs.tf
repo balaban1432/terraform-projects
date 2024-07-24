@@ -5,9 +5,3 @@ output "vpc_id" {
 output "vpc_cidr" {
     value = aws_vpc.main.cidr_block
 }
-
-output "vpc_tags" {
-    value = aws_vpc.main.tags  
-}
-
-

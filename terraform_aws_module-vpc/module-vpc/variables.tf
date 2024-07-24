@@ -1,5 +1,5 @@
 variable "owner" {
-    default = "mentoring-group-alpha"  
+    default = "balaban-example-vpc"  
 }
 
 variable "vpc_cidr_block" {
